@@ -16,13 +16,13 @@
   <body>
     <div class="weather-app">
       <header>
-        <form id="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
-            class="search-input"
-            id="search-input"
+            class="search-form-input"
+            id="search-form-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
@@ -30,19 +30,19 @@
       <main>
         <div class="current-weather-data">
           <div>
-            <h1 class="current-city" id="current-city">J</h1>
+            <h1 class="current-city" id="current-city">Johannesburg</h1>
             <p class="current-details">
-              <span id="current-time"></span>,
-              <span id="description"></span>
+              <span id="current-time">13:01</span>,
+              <span id="description">Sunny</span>
               <br />
-              Humidity: <strong id="humidity></strong>, 
-                          Wind: <strong id="wind speed></strong>
+              Humidity: <strong id="humidity>48%</strong>, 
+              <strong id="wind speed>40km/h</strong>
             </p>
           </div>
           <div class="current-temperature">
-            <div class="current-temperature-icon"></div
+            <div class="current-temperature-icon">☀️</div
             ><div class="current-temperature-value" id="current-temperature"
-              ></div
+              >25</div
             ><div class="current-temperature-unit">°C</div>
           </div>
         </div>
