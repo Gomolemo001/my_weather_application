@@ -18,34 +18,9 @@ function displayTemperature(response) {
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
 }
 
-function searchCity(city) {
-  let apiKey = "cboc8067f23a64d37024be43b90atd00";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayTemperature);
-}
-  
-
-function search(event) {
-  event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  let city = searchInputElement.value;
-
-  searchCity(searchInput.value)
-}
-
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
-  let day = date.getDay();
-
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-
   let days = [
     "Sunday",
     "Monday",
@@ -56,15 +31,42 @@ function formatDate(date) {
     "Saturday",
   ];
 
+  let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
   let formattedDay = days[day];
   return `${formattedDay} ${hours}:${minutes}`;
+}
+
+
+function searchCity(city) {
+  let apiKey = "cboc8067f23a64d37024be43b90atd00";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+  
+
+function searchSubmit(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-form-input");
+
+  searchCity(searchInput.value);
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
+searchCity("Johannesburg");
 
-let currentDateELement = document.querySelector("#current-date");
-let currentDate = new Date();
 
-currentDateELement.innerHTML = formatDate(currentDate);
+//let currentDateELement = document.querySelector("#current-date");
+//let currentDate = new Date();
+
+//currentDateELement.innerHTML = formatDate(currentDate);
