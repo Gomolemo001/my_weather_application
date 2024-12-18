@@ -55,7 +55,7 @@ main {
   justify-content: space-between;
 }
 
-.current-city {
+.city {
   font-size: 38px;
   font-weight: 900;
   margin: 0;
@@ -71,7 +71,7 @@ main {
   color: #f65282;
 }
 
-.current-temperature-icon {
+.icon {
   position: relative;
   top: -8px;
   font-size: 40px;
