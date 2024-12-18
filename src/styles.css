@@ -51,7 +51,9 @@ main {
 }
 
 .current-temperature {
-  font-size: 48px;
+  font-size: 88px;
+  line-height: 88px;
+  font-weigh: bold;
 }
 
 .current-weather {
