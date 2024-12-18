@@ -81,22 +81,18 @@ main {
   position: relative;
   top: -8px;
   font-size: 10px;
-  margin-right: bold;
-  line-height: 20px;
+  margin-right: 10px;
 }
 
 .current-temperature-value {
   font-size: 80px;
   font-weight: bold;
-  diplay: inline-block;
-  position: relative;
 }
 
 .current-temperature-unit {
  font-size: 28px;
   position: relative;
-  top: -30px;
-  margin-left: 5px;
+  top: -38px;
 }
 
 footer {
